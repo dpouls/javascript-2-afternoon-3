@@ -28,7 +28,9 @@
 */
 
 // Code Here 
-
+function first(array,cb){
+  return cb(array[0])
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -46,7 +48,9 @@ first(names, function(firstName){
   Write a function called last that takes in an array and a callback function. 
   Then invoke the callback, passing in the last element in the array as the argument.
 */
-
+function last(array,cb){
+  return cb(array[array.length-1])
+}
 //Code Here
 
 // Do not edit the code below.
@@ -65,6 +69,9 @@ last(names, function(lastName){
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
+function multiply(num1,num2,cb){
+  cb(num1*num2)
+}
 //Code Here
 
 // Do not edit the code below.
@@ -84,6 +91,13 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
+function contains(array, name, cb){
+  for(let i = 0; i < array.length; i++ ){
+    if(array[i] === name){
+      cb(true);
+    }else {cb(false)}
+  } 
+}
 //Code Here 
 
 // Do not edit the code below.
@@ -104,7 +118,15 @@ contains(names, 'Colt', function(result){
   Write a function called uniq that takes in an array and a callback function.
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
-
+function uniq(array,callback){
+  for(i=0; i<array.length; i ++){
+    for(j=0; j<array.length; j++){
+      if(array[i]===array[j]){
+        array.splice([j],1)
+      }
+    }
+  }callback(array)
+ }
 //Code Here
 
 // Do not edit the code below.
@@ -121,7 +143,12 @@ uniq(names, function(uniqArr){
   Write a function called each that takes in an array of names and a callback function. 
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
-
+function each(array,cb){
+  for(i = 0; i < array.length; i++)
+  {
+  cb(array[i],array.indexOf(array[i]))
+  }
+}
 //Code Here 
 
 // Do not edit the code below.
@@ -141,6 +168,13 @@ each(names, function(item, indice){
 
 // Code here
 
+function getUserById(users,id,cb){
+  for(let i = 0; i < users.length; i++){
+    if( id === users[i].id){
+      cb(users[i])
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
