@@ -3,7 +3,7 @@
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
 
-  You can refresh the page at any time to re-run all the tests.
+  You can refresh the pagae at any time to re-run all the tests.
 
   In this repo your job is to write functions to make each function call work properly.
 
